@@ -74,9 +74,7 @@ class StyleContentModel(tf.keras.models.Model):
                       for name, value in zip(self.style_layers, style_outputs)}
         return {'content': content_dict, 'style': style_dict}
 
-# ======================================================
 # Style Transfer Function (⚠️ no caching of tensors)
-# ======================================================
 @st.cache_resource
 def load_extractor():
     style_layers = [
@@ -126,9 +124,8 @@ def run_style_transfer(content_img, style_img, epochs=400, style_weight=1e-2, co
 
     return image
 
-# ======================================================
 # Streamlit UI Logic
-# ======================================================
+
 content_file = st.file_uploader("📸 Upload Content Image", type=["jpg", "jpeg", "png"])
 style_file = st.file_uploader("🖌️ Upload Style Image", type=["jpg", "jpeg", "png"])
 
@@ -155,10 +152,10 @@ if content_file and style_file:
             mime="image/png"
         )
 
-# ======================================================
-# 🧩 Educational Info Panel
-# ======================================================
-with st.expander("📘 Learn the Science Behind It"):
+
+# Educational Info Panel
+
+with st.expander(" Learn the Science Behind It"):
     st.markdown("""
     **Neural Style Transfer (NST)** merges the *content* of one image with the *style* of another.
     
@@ -169,3 +166,4 @@ with st.expander("📘 Learn the Science Behind It"):
     - **Optimizer:** **Adam**, trained on the image itself via gradient updates.
     """)
     st.info("Model: VGG19 | Framework: TensorFlow 2.x | Optimizer: Adam | Loss: Custom (Style + Content + TV)")
+
