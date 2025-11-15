@@ -1,23 +1,50 @@
- Neural Style Transfer Project
- Overview
-This project combines two images — one for content (like a photo) and one for style (like a painting) — to create a new image that looks like the photo but painted in the style of the artwork.
-We’ll use deep learning to do this by using a pre-trained model (VGG19) to extract and mix the features of both images.
+# Neural Style Transfer
 
- What I’ll Learn
-How Convolutional Neural Networks (CNNs) can be used for image processing.
-What a feature extractor is and how it helps get content and style from an image.
-What a Gram Matrix is and how it represents the texture and color patterns (the “style”).
-How to use content loss and style loss to generate new images.
-How to build a custom training loop using TensorFlow and Keras.
+A simple deep-learning project that blends the **content** of one image with the **style** of another using **Neural Style Transfer (NST)**. The model uses **VGG19** to extract features and optimizes a new image that matches the content structure while adopting the artistic style.
 
- Tools & Libraries
-Python
-TensorFlow / Keras
-NumPy
-Pillow (PIL)
-Streamlit – for the web app where users can upload their images
+---
 
- Goal
-By the end, the app should:
-Let users upload a content image and a style image.
-Generate and display a new stylized image.
+## Overview
+
+This project:
+- Takes a **content image** (photo)
+- Takes a **style image** (artwork)
+- Generates a new image combining both
+
+The process uses feature extraction, Gram Matrices, and a custom loss function to guide the optimization.
+
+---
+
+## What You’ll Learn
+
+- How Convolutional Neural Networks handle image features  
+- What a feature extractor is and how VGG19 is used  
+- How Gram Matrices represent style  
+- How content loss and style loss are calculated  
+- How to build a custom training loop using TensorFlow/Keras  
+
+---
+
+## Tools & Libraries
+
+- Python  
+- TensorFlow / Keras  
+- NumPy  
+- Pillow (PIL)  
+- Streamlit  
+
+---
+
+## Features
+
+- Upload a content image  
+- Upload a style image  
+- Generate a stylized output  
+- Run everything inside a simple Streamlit UI  
+
+---
+
+## How to Run
+
+```bash
+streamlit run app.py
